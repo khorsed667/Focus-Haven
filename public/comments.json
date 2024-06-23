@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "name": "Carolyn Stewart",
+      "location": "United States",
+      "comment": "The Summer Camp Photography course was an amazing experience! I learned so much about landscape and portrait photography. The instructors were knowledgeable and inspiring."
+    },
+    {
+      "id": 2,
+      "name": "Michael Johnson",
+      "location": "Canada",
+      "comment": "I had a fantastic time at the Summer Camp Photography course. The hands-on sessions were very helpful, and I now feel much more confident in my photography skills."
+    },
+    {
+      "id": 3,
+      "name": "Emily Davis",
+      "location": "United Kingdom",
+      "comment": "The course was well-organized and covered a wide range of topics. I especially enjoyed the creative assignments that challenged us to think outside the box."
+    }
+  ]
+  

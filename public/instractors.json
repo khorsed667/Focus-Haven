@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Jeny Far",
+        "profilePicture": "https://img.freepik.com/free-photo/joyful-confident-blonde-businesswoman-suit-smiling-isolated-modern-worker-secretary-executive-successful-cheerful-mood_197531-2109.jpg?t=st=1716802888~exp=1716806488~hmac=0d08aabd53cbc62e904faf4fd73fca3144216d0b3b91fe73099726425f14bc83&w=996",
+        "bio": "Jeny is a seasoned photographer with over 15 years of experience in landscape and portrait photography. He loves teaching and inspiring young photographers.",
+        "specialty": "Landscape Photography",
+        "email": "jeny.far@example.com",
+        "numberOfClasses": 1,
+        "classesTaken": ["Landscape Photography"]
+    },
+    {
+        "name": "Jane Smith",
+        "profilePicture": "https://img.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg?t=st=1716802916~exp=1716806516~hmac=8953588898dc7f2fb302bdc80dc15accefb9ab0a1f638a865a40e568aebd96e6&w=996",
+        "bio": "Jane is a professional photographer and an expert in wildlife photography. She has traveled to over 30 countries capturing the beauty of wildlife.",
+        "specialty": "Wildlife Photography",
+        "email": "jane.smith@example.com",
+        "numberOfClasses": 1,
+        "classesTaken": ["Wildlife Photography Expedition"]
+    },
+    {
+        "name": "Emily Johnson",
+        "profilePicture": "https://img.freepik.com/free-photo/businesswoman-executive-professional-success-concept_53876-137644.jpg?t=st=1716802927~exp=1716806527~hmac=02c616cd6cac13438b2df789b47e59a82842c3e564557f6836b5cfa4d39c0d51&w=996",
+        "bio": "Emily is known for her creative approach to portrait photography. She brings out the best in her subjects with her unique style and artistic vision.",
+        "specialty": "Portrait Photography",
+        "email": "emily.johnson@example.com",
+        "numberOfClasses": 1,
+        "classesTaken": ["Introduction to Digital Photography"]
+    },
+    {
+        "name": "Michael Brown",
+        "profilePicture": "https://img.freepik.com/free-photo/beautiful-young-man-student-businessman-jacket-holds-his-arms-crossed-isolated-light-grey-wall_231208-6135.jpg?t=st=1716802839~exp=1716806439~hmac=1bd77844780b5da8a404840eacd95e509c278c89bbd44210286d6fae37bb7658&w=996",
+        "bio": "Michael is a highly skilled photographer with a passion for urban and street photography. He has a knack for capturing the essence of city life.",
+        "specialty": "Urban Photography",
+        "email": "michael.brown@example.com",
+        "numberOfClasses": 2,
+        "classesTaken": ["Street Photography Bootcamp", "Mobile Photography Workshop"]
+    },
+    {
+        "name": "Sarah Davis",
+        "profilePicture": "https://img.freepik.com/free-photo/pretty-young-student-with-big-glasses-near-some-books-smiling-white-background_231208-1850.jpg?t=st=1716802853~exp=1716806453~hmac=116005c8cc60d1a316d67bc1cb31788a38b632e3ef2f92f2613c1e274695fa24&w=996",
+        "bio": "Sarah specializes in nature photography, capturing the serene beauty of landscapes and natural scenes. Her work is both tranquil and breathtaking.",
+        "specialty": "Nature Photography",
+        "email": "sarah.davis@example.com",
+        "numberOfClasses": 2,
+        "classesTaken": ["Landscape Photography Workshop", "Travel Photography Adventure"]
+    },
+    {
+        "name": "David Wilson",
+        "profilePicture": "https://img.freepik.com/free-photo/businessman-black-suit-holding-his-tasklist-smiling_114579-18998.jpg?t=st=1716802864~exp=1716806464~hmac=d6d19379a69f2c4b275c8fa8b25861854a052d40be792de4df8ba3b8afce2497&w=996",
+        "bio": "David is an accomplished photographer with a focus on macro photography. He loves exploring the tiny details of the world through his lens.",
+        "specialty": "Macro Photography",
+        "email": "david.wilson@example.com",
+        "numberOfClasses": 2,
+        "classesTaken": ["Food Photography Essentials", "Black and White Photography Masterclass"]
+    }
+]
