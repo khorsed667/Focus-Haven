@@ -1,8 +1,10 @@
 import { useParams } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../Authentication/Providers/AuthProvider';
 import useFetch from '../../hooks/useFetch';
 import useAvailableSeats from '../../hooks/useAvailableSeats';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const ClassDetails = () => {
   const url = 'http://localhost:5000/classes';
@@ -10,7 +12,9 @@ const ClassDetails = () => {
   const { user } = useContext(AuthContext);
   const { id } = useParams();
   const [availableSeats] = useAvailableSeats(id);
-  console.log(availableSeats);
+  // console.log(availableSeats);
+  const [startDate, setStartDate] = useState(null);
+  const [showDatePicker, setShowDatePicker] = useState(false);
 
   if (!data) {
     return <div>Loading...</div>;
@@ -33,7 +37,7 @@ const ClassDetails = () => {
   };
 
   const handlePaymentFunctionality = () => {
-    console.log(enrollingClass);
+    // console.log(enrollingClass);
     fetch('http://localhost:5000/enroll', {
       method: 'POST',
       headers: {
@@ -54,6 +58,17 @@ const ClassDetails = () => {
     });
   };
 
+
+  const handleScheduleDemo = () => {
+    setShowDatePicker(true);
+  };
+
+  const handleDateSelect = (date) => {
+    setStartDate(date);
+    setShowDatePicker(false);
+    console.log('Selected date:', date);
+  };
+
   return (
     <div style={{ backgroundImage: `url(${image})` }} className="text-white bg-cover min-h-screen flex items-center justify-center">
       <div className="max-w-screen-xl bg-black bg-opacity-90 my-24 mx-auto p-4">
@@ -69,9 +84,20 @@ const ClassDetails = () => {
                 <li className='mt-5'>Available Seats: {availableSeats}</li>
               </ul>
               <div className="flex items-center space-x-4 mb-4">
-                <button className="bg-gradient-to-r from-slate-400 to-black transition-all duration-300 hover:bg-gray-600 text-white font-bold py-2 px-4 hover:rounded-2xl">
+              <button
+                  onClick={handleScheduleDemo}
+                  className="bg-gradient-to-r from-slate-400 to-black transition-all duration-300 hover:bg-gray-600 text-white font-bold py-2 px-4 hover:rounded-2xl"
+                >
                   Schedule a Demo Class
                 </button>
+                {showDatePicker && (
+                  <DatePicker
+                    selected={startDate}
+                    onChange={handleDateSelect}
+                    inline
+                  />
+                )}
+
                 <button className="border-2 border-slate-200 hover:bg-gray-600 transition-all duration-300 text-white font-bold py-2 px-4 hover:rounded-2xl">
                   Download Syllabus
                 </button>
