@@ -19,7 +19,7 @@ const Testimonial = () => {
   const totalPages = Math.ceil(data.length / commentsPerPage);
 
   return (
-    <div className="max-w-screen-xl mx-auto text-center py-12">
+    <div className="max-w-screen-xl mx-auto text-center px-3 md:px-0 py-12">
       <p className="text-xl my-5 text-slate-500 font-sans font-semibold">
         Testimonials
       </p>

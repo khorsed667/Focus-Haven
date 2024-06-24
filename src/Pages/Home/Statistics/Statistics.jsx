@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 const StatsSection = () => {
     useEffect(() => {
@@ -26,7 +26,7 @@ const StatsSection = () => {
     return (
         <section className="text-center py-16 bg-black text-white">
             <div className="container mx-auto">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 xsm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div className="stat-item">
                         <div className="text-5xl font-bold" id="stat1">0</div>
                         <p className="text-gray-600 mt-2">Total Students</p>

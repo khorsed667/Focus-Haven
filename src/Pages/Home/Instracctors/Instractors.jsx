@@ -18,7 +18,7 @@ const Instractors = () => {
   const totalPages = Math.ceil(data.length / instructorsPerPage);
 
   return (
-    <div className="bg-slate-200 py-10">
+    <div className="bg-slate-200 px-3 md:px-0 py-10">
       <div className="max-w-screen-xl mx-auto">
         <p className="text-xl font-bold text-slate-700 text-center my-5">
           Our Instractors

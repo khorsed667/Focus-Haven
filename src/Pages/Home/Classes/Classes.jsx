@@ -1,15 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
-
-const classesPerPage = 3;
 
 const Classes = () => {
   const url = 'http://localhost:5000/classes';
 
   const [data] = useFetch(url);
-
   const [currentPage, setCurrentPage] = useState(1);
+  const [classesPerPage, setClassesPerPage] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setClassesPerPage(6); // For large screens, show 9 classes per page
+      } else if (window.innerWidth >= 768) {
+        setClassesPerPage(6); // For medium screens, show 6 classes per page
+      } else {
+        setClassesPerPage(3); // For small screens, show 3 classes per page
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Initial call to set the correct number of classes
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const totalPages = Math.ceil(data.length / classesPerPage);
 
@@ -25,7 +40,7 @@ const Classes = () => {
     <div className="bg-slate-200">
       <div className="max-w-screen-xl mx-auto">
         <div className="container mx-auto py-8">
-          <div className="w-1/2 mx-auto text-center">
+          <div className="w-full md:w-1/2 mx-auto text-center">
             <p className="text-xl my-5 text-slate-500 font-sans font-semibold">
               Our Classes
             </p>

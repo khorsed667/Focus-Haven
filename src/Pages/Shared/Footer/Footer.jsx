@@ -12,16 +12,16 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white mt-10 p-8">
-      <div className="max-w-screen-xl mx-auto flex justify-between items-start">
-        <div>
-          <div className="mx-auto text-center my-5">
+    <footer className="bg-black text-white p-8">
+      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0">
+        <div className="text-center md:text-left">
+          <div className="my-5">
             <p className="text-5xl">FocusHaven</p>
             <p className="text-sm tracking-widest mt-2">PHOTOGRAPHY</p>
           </div>
           <p className="text-gray-500">&copy;2024, All Right Reserved.</p>
         </div>
-        <div>
+        <div className="md:text-left">
           <h4 className="text-lg font-semibold mb-4">Main Office</h4>
           <p className="flex items-center mb-2">
             <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
@@ -32,7 +32,7 @@ const Footer = () => {
             10001234567
           </p>
         </div>
-        <div>
+        <div className="md:text-left">
           <h4 className="text-lg font-semibold mb-4">Useful Links</h4>
           <ul>
             <li className="mb-2">
@@ -67,9 +67,9 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div>
+        <div className="md:text-left">
           <h4 className="text-xl font-semibold mb-4">Socials</h4>
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 justify-center md:justify-start">
             <a href="#" className="text-gray-500 hover:text-white">
               <FontAwesomeIcon icon={faFacebookF} />
             </a>

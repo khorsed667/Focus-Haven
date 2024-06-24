@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 
 const Gallery = () => {
   const imageArray = [
@@ -49,25 +49,53 @@ const Gallery = () => {
     },
   ];
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 3;
+
+  const totalPages = Math.ceil(imageArray.length / itemsPerPage);
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentImages = imageArray.slice(indexOfFirstItem, indexOfLastItem);
+
+  const handleClickPage = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
-    <div className="max-w-screen-xl mx-auto my-16">
-      <div className="w-1/2 mx-auto text-center">
+    <div className="max-w-screen-xl mx-auto my-16" id="gallery">
+      <div className="w-full md:w-1/2 mx-auto text-center">
         <p className="text-2xl text-slate-500 font-sans font-semibold">Our Gallery</p>
         <p className="text-3xl my-5">Witness clicks of this year.</p>
       </div>
-      <div className="grid grid-cols-3 gap-5 w-full mt-7">
-        {imageArray.map((item, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full mt-7">
+        {currentImages.map((item, index) => (
           <div key={index} className="relative z-0 overflow-hidden cursor-pointer group hover:border-black hover:border-2">
             <img
               src={item.image}
               alt={`Gallery item ${index + 1}`}
-              className="w-full h-full object-cover transform transition-transform duration-[10000ms] group-hover:scale-150"
+              className="w-full h-48 object-cover transform transition-transform duration-[10000ms] group-hover:scale-150"
             />
             <div className="absolute inset-0 bg-black bg-opacity-70 opacity-0 transition-opacity duration-[3000ms] group-hover:opacity-100"></div>
             <div className="absolute inset-0 flex items-end justify-center text-white text-center p-4 opacity-0 transition-opacity duration-1000 group-hover:opacity-100">
               {item.info}
             </div>
           </div>
+        ))}
+      </div>
+      <div className="flex justify-center mt-8 space-x-2">
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button
+            key={index + 1}
+            onClick={() => handleClickPage(index + 1)}
+            className={`px-4 py-2 rounded ${
+              currentPage === index + 1
+                ? "bg-black text-white"
+                : "bg-gray-300 text-gray-700"
+            }`}
+          >
+            {index + 1}
+          </button>
         ))}
       </div>
     </div>

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const StorySection = () => {
   return (
     <section className="bg-white py-16 px-4 max-w-screen-xl mx-auto text-center bg-gradient-to-r from-white to-slate-100 border-2 my-5 border-black rounded-3xl p-16">
