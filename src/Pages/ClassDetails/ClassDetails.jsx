@@ -12,7 +12,6 @@ const ClassDetails = () => {
   const { user } = useContext(AuthContext);
   const { id } = useParams();
   const [availableSeats] = useAvailableSeats(id);
-  // console.log(availableSeats);
   const [startDate, setStartDate] = useState(null);
   const [showDatePicker, setShowDatePicker] = useState(false);
 
@@ -37,7 +36,6 @@ const ClassDetails = () => {
   };
 
   const handlePaymentFunctionality = () => {
-    // console.log(enrollingClass);
     fetch('http://localhost:5000/enroll', {
       method: 'POST',
       headers: {
@@ -58,7 +56,6 @@ const ClassDetails = () => {
     });
   };
 
-
   const handleScheduleDemo = () => {
     setShowDatePicker(true);
   };
@@ -73,8 +70,8 @@ const ClassDetails = () => {
     <div style={{ backgroundImage: `url(${image})` }} className="text-white bg-cover min-h-screen flex items-center justify-center">
       <div className="max-w-screen-xl bg-black bg-opacity-90 my-24 mx-auto p-4">
         <div className="rounded-lg shadow-lg overflow-hidden">
-          <div className="p-6 lg:flex lg:items-center lg:justify-between">
-            <div className='w-2/3'>
+          <div className="p-6 flex flex-col lg:flex-row lg:items-center lg:justify-between">
+            <div className='lg:w-2/3'>
               <h2 className="text-3xl font-bold mb-4">{className}</h2>
               <ul className="mb-4">
                 <li className='mt-5'>Duration: {duration}</li>
@@ -83,10 +80,10 @@ const ClassDetails = () => {
                 <li className='mt-5'>Price: ${price}</li>
                 <li className='mt-5'>Available Seats: {availableSeats}</li>
               </ul>
-              <div className="flex items-center space-x-4 mb-4">
-              <button
+              <div className="flex flex-col lg:flex-row items-center lg:space-x-4 mb-4">
+                <button
                   onClick={handleScheduleDemo}
-                  className="bg-gradient-to-r from-slate-400 to-black transition-all duration-300 hover:bg-gray-600 text-white font-bold py-2 px-4 hover:rounded-2xl"
+                  className="bg-gradient-to-r from-slate-400 to-black transition-all duration-300 hover:bg-gray-600 text-white font-bold py-2 px-4 mb-4 lg:mb-0 hover:rounded-2xl"
                 >
                   Schedule a Demo Class
                 </button>
@@ -97,31 +94,30 @@ const ClassDetails = () => {
                     inline
                   />
                 )}
-
                 <button className="border-2 border-slate-200 hover:bg-gray-600 transition-all duration-300 text-white font-bold py-2 px-4 hover:rounded-2xl">
                   Download Syllabus
                 </button>
               </div>
-              <div className="flex bg-gradient-to-r from-slate-800 to-black mt-12 border-2 border-slate-300 w-4/5 space-x-4">
-                <div className="text-center border-r-2 w-1/4 m-3">
+              <div className="flex flex-col lg:flex-row bg-gradient-to-r from-slate-800 to-black mt-12 border-2 border-slate-300 lg:w-4/5 space-x-0 lg:space-x-4">
+                <div className="text-center border-b-2 lg:border-r-2 lg:border-b-0 lg:w-1/4 m-3">
                   <h4 className="font-bold">{numberOfClasses}</h4>
                   <p className='text-xs'>Classes</p>
                 </div>
-                <div className="text-center border-r-2 w-1/4 m-3">
+                <div className="text-center border-b-2 lg:border-r-2 lg:border-b-0 lg:w-1/4 m-3">
                   <h4 className="font-bold">{duration}</h4>
                   <p className='text-xs'>Duration</p>
                 </div>
-                <div className="text-center border-r-2 w-1/4 m-3">
+                <div className="text-center border-b-2 lg:border-r-2 lg:border-b-0 lg:w-1/4 m-3">
                   <h4 className="font-bold">{availableSeats}</h4>
                   <p className='text-xs'>Available Seats</p>
                 </div>
-                <div className="text-center w-1/4 m-3">
+                <div className="text-center lg:w-1/4 m-3">
                   <h4 className="font-bold">{instructorName}</h4>
                   <p className='text-xs'>Instructor</p>
                 </div>
               </div>
             </div>
-            <div className="mt-6 w-1/3 lg:mt-0 lg:ml-6">
+            <div className="mt-6 lg:mt-0 lg:w-1/3 lg:ml-6">
               <div className="bg-white overflow-hidden">
                 <img src={image} alt={className} className="w-full" />
                 <div className="p-4">

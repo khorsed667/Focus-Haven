@@ -5,7 +5,7 @@ import Footer from "../Pages/Shared/Footer/Footer";
 const Main = () => {
 
     const location = useLocation();
-    const removeSection = location.pathname.includes('singIn') || location.pathname.includes('signUp');
+    const removeSection = location.pathname.includes('signIn') || location.pathname.includes('signUp');
 
     return (
         <div>

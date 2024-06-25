@@ -12,7 +12,6 @@ const ScheduleClass = () => {
           </tr>
         </thead>
         <tbody>
-          {/* Replace with dynamic content */}
           <tr>
             <td className="px-4 py-2 border">Class 1</td>
             <td className="px-4 py-2 border">2024-06-15</td>
@@ -24,7 +23,6 @@ const ScheduleClass = () => {
               <button className="text-blue-600 hover:text-blue-800">Pay</button>
             </td>
           </tr>
-          {/* Add more rows as needed */}
         </tbody>
       </table>
     </div>

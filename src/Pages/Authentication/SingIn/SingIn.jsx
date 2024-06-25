@@ -1,4 +1,3 @@
-// src/components/LoginPage.js
 import { useContext } from "react";
 import signJpg from "./../../../assets/auth.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +9,7 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 
-const SingIn = () => {
+const SignIn = () => {
   const { signIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -37,16 +36,16 @@ const SingIn = () => {
 
   return (
     <div
-      className="flex h-screen w-full bg-cover px-20"
+      className="flex flex-col md:flex-row w-full bg-cover px-4 md:px-20"
       style={{ backgroundImage: `url(${signJpg})` }}
     >
-      <div className="flex-1 flex flex-col justify-center items-center bg-cover bg-center">
+      <div className="flex-1 flex flex-col justify-center items-center bg-cover bg-center p-4 md:p-0">
         <h1 className="text-4xl font-bold text-black">FocusHaven</h1>
         <p className="mt-4 text-lg text-black">
           Welcome to FocusHaven! We're glad to see you.
         </p>
       </div>
-      <div className="flex-1 flex flex-col justify-center items-center p-8">
+      <div className="flex-1 flex flex-col justify-center items-center p-4 md:p-8 bg-white bg-opacity-70 mb-10 mt-10 rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold mb-6">Sign In</h2>
         <form className="w-full max-w-sm" onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -88,7 +87,7 @@ const SingIn = () => {
             </button>
           </div>
         </form>
-        <div className="mb-4">
+        <div className="mb-4 w-full">
           <p className="text-gray-600 text-center mb-2">Or sign in with</p>
           <div className="flex justify-between space-x-2">
             <button className="border border-black text-black hover:bg-black hover:text-white transition-all duration-300 font-bold py-2 px-4 rounded-full flex items-center justify-center w-1/3">
@@ -116,4 +115,4 @@ const SingIn = () => {
   );
 };
 
-export default SingIn;
+export default SignIn;

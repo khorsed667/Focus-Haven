@@ -33,7 +33,7 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
           element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
         },
         {
-          path: '/singIn',
+          path: '/signIn',
           element: <SingIn></SingIn>
         },
         {

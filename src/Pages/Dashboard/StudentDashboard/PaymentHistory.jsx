@@ -2,7 +2,7 @@ import useFetch from "../../../hooks/useFetch";
 
 const PaymentHistory = () => {
 
-  const url = 'http://localhost:5000/order';
+  const url = 'http://localhost:5000/payments';
   const [data] = useFetch(url);
 
   return (
