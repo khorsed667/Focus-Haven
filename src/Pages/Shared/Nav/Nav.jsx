@@ -52,7 +52,7 @@ const Nav = () => {
             LogOut
           </button>
         ) : (
-          <Link to={"singIn"} href="#" className="md:px-2 px-5 text-lg cursor-pointer hover:text-slate-400 duration-500">
+          <Link to={"signIn"} href="#" className="md:px-2 px-5 text-lg cursor-pointer hover:text-slate-400 duration-500">
             Login
           </Link>
         )}
