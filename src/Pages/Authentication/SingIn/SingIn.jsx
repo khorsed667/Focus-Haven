@@ -36,7 +36,7 @@ const SignIn = () => {
 
   return (
     <div
-      className="flex flex-col md:flex-row w-full bg-cover px-4 md:px-20"
+      className="flex flex-col md:h-screen md:flex-row w-full bg-cover px-4 md:px-20"
       style={{ backgroundImage: `url(${signJpg})` }}
     >
       <div className="flex-1 flex flex-col justify-center items-center bg-cover bg-center p-4 md:p-0">
