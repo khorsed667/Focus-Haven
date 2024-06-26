@@ -1,12 +1,12 @@
 import useFetch from "../../../hooks/useFetch";
 
 const ManageUsers = ({handelUserRole}) => {
-  const url = "http://localhost:5000/users";
+  const url = "https://focus-haven-server.onrender.com/users";
   const [data] = useFetch(url);
 
   // const handelUserRole = (id, value) =>{
   //   setRole(value)
-  //   fetch(`http://localhost:5000/users/${id}`, {
+  //   fetch(`https://focus-haven-server.onrender.com/users/${id}`, {
   //     method: 'PATCH',
   //     headers:{
   //       'Content-Type' : 'application/json'

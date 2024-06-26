@@ -3,7 +3,7 @@ import classes from './../../../../public/classes.json'
 
 const EnrolledClass = () => {
 
-  const url = 'http://localhost:5000/payments';
+  const url = 'https://focus-haven-server.onrender.com/payments';
   const [data] = useFetch(url);
   const targetedClasses = classes.filter(cls => data.some(order => order.className === cls.className));
 

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 
 const Classes = () => {
-  const url = 'http://localhost:5000/classes';
+  const url = 'https://focus-haven-server.onrender.com/classes';
 
   const [data] = useFetch(url);
   const [currentPage, setCurrentPage] = useState(1);
