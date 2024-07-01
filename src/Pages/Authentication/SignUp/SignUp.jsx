@@ -31,7 +31,7 @@ const SignUp = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         updateUserProfile(username, url);
-        fetch("http://localhost:5000/user", {
+        fetch("https://focus-haven-server.onrender.com/user", {
           method: "POST",
           headers: {
             "content-type": "application/json",

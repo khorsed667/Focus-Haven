@@ -5,7 +5,7 @@ const useFetch = () => {
     const [classes, setData] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/classes')
+        fetch('https://focus-haven-server.onrender.com/classes')
         .then(res => res.json())
         .then(classes => {
           setData(classes)

@@ -5,7 +5,7 @@ const useUser = () => {
   const { user } = useContext(AuthContext);
   const [currentUserRole, setCurrentUserRole] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://focus-haven-server.onrender.com/users")
       .then((res) => res.json())
       .then((users) => {
         const currentUser = users.find((usr) => usr.email === user.email);

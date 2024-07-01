@@ -2,7 +2,7 @@ import useFetch from "../../../hooks/useFetch";
 
 const PaymentHistory = () => {
 
-  const url = 'http://localhost:5000/payments';
+  const url = 'https://focus-haven-server.onrender.com/payments';
   const [data] = useFetch(url);
 
   return (
