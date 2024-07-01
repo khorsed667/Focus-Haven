@@ -4,7 +4,7 @@ import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import useFetch from "../../../hooks/useFetch";
 
 const Testimonial = () => {
-  const url = 'https://focus-haven-server.onrender.com/comments'
+  const url = 'http://localhost:5000/comments'
   const [data] = useFetch(url);
   const [currentPage, setCurrentPage] = useState(1);
   const commentsPerPage = 1;

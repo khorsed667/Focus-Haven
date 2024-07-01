@@ -1,7 +1,7 @@
 import useFetch from "../../hooks/useFetch";
 
 const AllClasses = () => {
-  const url = "https://focus-haven-server.onrender.com/classes";
+  const url = "http://localhost:5000/classes";
   const [data] = useFetch(url);
   console.log(data);
 

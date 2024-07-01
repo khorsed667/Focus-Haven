@@ -2,7 +2,7 @@ import { useState } from "react";
 import useFetch from "../../../hooks/useFetch";
 
 const Instractors = () => {
-  const url = "https://focus-haven-server.onrender.com/instractors";
+  const url = "http://localhost:5000/instractors";
   const [data] = useFetch(url);
 
   const [currentPage, setCurrentPage] = useState(1);

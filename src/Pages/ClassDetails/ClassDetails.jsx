@@ -7,7 +7,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const ClassDetails = () => {
-  const url = 'https://focus-haven-server.onrender.com/classes';
+  const url = 'http://localhost:5000/classes';
   const [data] = useFetch(url);
   const { user } = useContext(AuthContext);
   const { id } = useParams();
@@ -36,7 +36,7 @@ const ClassDetails = () => {
   };
 
   const handlePaymentFunctionality = () => {
-    fetch('https://focus-haven-server.onrender.com/enroll', {
+    fetch('http://localhost:5000/enroll', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

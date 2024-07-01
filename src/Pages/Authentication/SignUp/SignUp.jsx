@@ -23,7 +23,7 @@ const SignUp = () => {
       name: username,
       email: email,
       photo: url,
-      role: "student",
+      role: "Student",
     };
     // console.log("User Information:", { username, email, password });
     signUp(email, password)
@@ -31,7 +31,7 @@ const SignUp = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         updateUserProfile(username, url);
-        fetch("https://focus-haven-server.onrender.com/user", {
+        fetch("http://localhost:5000/user", {
           method: "POST",
           headers: {
             "content-type": "application/json",

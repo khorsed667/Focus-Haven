@@ -4,7 +4,7 @@ import useFetch from "../../../hooks/useFetch";
 const ManageClasses = () => {
   const [feedbackModal, setFeedbackModal] = useState(false);
   const [feedback, setFeedback] = useState("");
-  const url = "https://focus-haven-server.onrender.com/classes";
+  const url = "http://localhost:5000/classes";
   const [data] = useFetch(url);
 
   const handleFeedback = () => {
@@ -14,7 +14,7 @@ const ManageClasses = () => {
 
   const handelClassStatus = (id, classStatus) => {
     console.log(id, classStatus);
-    fetch(`https://focus-haven-server.onrender.com/classes/${id}`, {
+    fetch(`http://localhost:5000/classes/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +34,7 @@ const ManageClasses = () => {
 
   const handelDelete = (id) => {
     console.log(id);
-    fetch(`https://focus-haven-server.onrender.com/classes/${id}`, {
+    fetch(`http://localhost:5000/classes/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

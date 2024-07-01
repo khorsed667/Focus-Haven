@@ -4,7 +4,7 @@ const useAvailableSeats = (classId) => {
   const [availableSeats, setAvailableSeats] = useState(null);
 
   useEffect(() => {
-    fetch(`https://focus-haven-server.onrender.com/classes/${classId}`)
+    fetch(`http://localhost:5000/classes/${classId}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

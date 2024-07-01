@@ -7,7 +7,7 @@ const AdminDashboard = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const handelUserRole = (id, value) => {
-    fetch(`https://focus-haven-server.onrender.com/users/${id}`, {
+    fetch(`http://localhost:5000/users/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

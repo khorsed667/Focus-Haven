@@ -5,13 +5,13 @@ import useUser from "../../hooks/useUser";
 
 const Dashboard = () => {
   const [currentUserRole] = useUser();
-  // console.log(currentUserRole);
+  console.log(currentUserRole);
 
   return (
     <div>
       {currentUserRole === 'student' && <StudentDashboard></StudentDashboard>}
-      {currentUserRole === 'instractor' && <InstractorDashboard></InstractorDashboard>}
-      {currentUserRole === 'admin' && <AdminDashboard></AdminDashboard>}
+      {currentUserRole === 'Instractor' && <InstractorDashboard></InstractorDashboard>}
+      {currentUserRole === 'Admin' && <AdminDashboard></AdminDashboard>}
     </div>
   );
 };

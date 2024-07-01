@@ -42,7 +42,7 @@ const Nav = () => {
           Classes
         </Link>
         <Link to="/dashboard" className="md:px-2 px-5 text-lg cursor-pointer hover:text-slate-400 duration-500">
-          Deshboard
+          Dashboard
         </Link>
         {user ? (
           <button

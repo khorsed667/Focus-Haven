@@ -33,7 +33,7 @@ const AddClass = () => {
       image,
     };
 
-    fetch("https://focus-haven-server.onrender.com/addClasses", {
+    fetch("http://localhost:5000/addClasses", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -1,12 +1,12 @@
 import useFetch from "../../../hooks/useFetch";
 
 const ManageUsers = ({handelUserRole}) => {
-  const url = "https://focus-haven-server.onrender.com/users";
+  const url = "http://localhost:5000/users";
   const [data] = useFetch(url);
 
   // const handelUserRole = (id, value) =>{
   //   setRole(value)
-  //   fetch(`https://focus-haven-server.onrender.com/users/${id}`, {
+  //   fetch(`http://localhost:5000/users/${id}`, {
   //     method: 'PATCH',
   //     headers:{
   //       'Content-Type' : 'application/json'
@@ -31,7 +31,6 @@ const ManageUsers = ({handelUserRole}) => {
           </tr>
         </thead>
         <tbody>
-          {/* Replace with dynamic content */}
           {data.map((user) => (
             <tr key={user._id}>
               <td className="px-4 py-2 border">{user.name}</td>
@@ -47,7 +46,6 @@ const ManageUsers = ({handelUserRole}) => {
               </td>
             </tr>
           ))}
-          {/* Add more rows as needed */}
         </tbody>
       </table>
     </div>
