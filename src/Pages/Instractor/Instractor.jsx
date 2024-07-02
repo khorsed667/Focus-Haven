@@ -20,7 +20,6 @@ const Instractor = () => {
             <th className="px-4 py-2 border-b">Name</th>
             <th className="px-4 py-2 border-b">Email</th>
             <th className="px-4 py-2 border-b">Number of Classes</th>
-            <th className="px-4 py-2 border-b">Classes Taken</th>
             <th className="px-4 py-2 border-b">Action</th>
           </tr>
         </thead>
@@ -38,9 +37,6 @@ const Instractor = () => {
               <td className="px-4 py-2 border-b text-center">{instructor.email}</td>
               <td className="px-4 py-2 border-b text-center">
                 {instructor.numberOfClasses}
-              </td>
-              <td className="px-4 py-2 border-b text-center">
-                {instructor.classesTaken.join(", ")}
               </td>
               <td className="px-4 py-2 border-b text-center">
                 <button

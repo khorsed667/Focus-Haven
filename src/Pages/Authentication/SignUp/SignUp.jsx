@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import signJpg from "./../../../assets/auth.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,12 +8,16 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import LoadingPage from "../../../component/Loading";
 
 const SignUp = () => {
   const { signUp, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [waiting, setWaiting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = (event) => {
+    setWaiting(true);
     event.preventDefault();
     const username = event.target.username.value;
     const email = event.target.email.value;
@@ -43,13 +47,25 @@ const SignUp = () => {
             console.log(data);
           });
         navigate("/");
+        setWaiting(false);
       })
       .catch((error) => {
         const errorCode = error.code;
+        setErrorMessage(errorCode);
         const errorMessage = error.message;
         console.log({ errorCode, errorMessage });
+        setWaiting(false);
+        // setErrorMessage("Please Try After a While...");
       });
   };
+
+  if (waiting) {
+    return (
+      <div>
+        <LoadingPage></LoadingPage>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -109,6 +125,9 @@ const SignUp = () => {
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             />
+          </div>
+          <div className="text-center mb-3 font-bold text-red-600">
+            <p>{errorMessage}</p>
           </div>
           <div className="mb-4">
             <button

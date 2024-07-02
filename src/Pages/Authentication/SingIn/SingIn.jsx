@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import signJpg from "./../../../assets/auth.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,15 +8,19 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import LoadingPage from "../../../component/Loading";
 
 const SignIn = () => {
   const { signIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const [waiting, setWaiting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = (event) => {
+    setWaiting(true);
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
@@ -26,13 +30,24 @@ const SignIn = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         navigate(from, { replace: true });
+        setWaiting(false);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log({ errorCode, errorMessage });
+        setWaiting(false);
+        setErrorMessage("Please Input Valid User Information");
       });
   };
+
+  if (waiting) {
+    return (
+      <div>
+        <LoadingPage></LoadingPage>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -77,6 +92,9 @@ const SignIn = () => {
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             />
+          </div>
+          <div className="text-center mb-3 font-bold text-red-600">
+            <p>{errorMessage}</p>
           </div>
           <div className="mb-4">
             <button

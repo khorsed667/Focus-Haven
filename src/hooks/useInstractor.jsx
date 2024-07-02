@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 
-const useFetch = () => {
+const useInstractor = () => {
 
-    const [classes, setData] = useState([])
+    const [instractors, setData] = useState([])
     const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
-        fetch('https://focus-haven-server.onrender.com/classes')
+        fetch('https://focus-haven-server.onrender.com/instractors')
         .then(res => res.json())
         .then(classes => {
           setData(classes);
           setLoading(false);
-          console.log(classes);
+          console.log(instractors);
         })
       }, [])
 
-      return [classes, loading];
+      return [instractors, loading];
 };
 
-export default useFetch;
+export default useInstractor;
