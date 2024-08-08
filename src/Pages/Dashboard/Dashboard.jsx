@@ -9,7 +9,7 @@ const Dashboard = () => {
 
   return (
     <div>
-      {currentUserRole === 'student' && <StudentDashboard></StudentDashboard>}
+      {currentUserRole === 'Student' && <StudentDashboard></StudentDashboard>}
       {currentUserRole === 'Instractor' && <InstractorDashboard></InstractorDashboard>}
       {currentUserRole === 'Admin' && <AdminDashboard></AdminDashboard>}
     </div>

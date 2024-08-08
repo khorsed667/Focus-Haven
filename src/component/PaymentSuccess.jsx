@@ -28,7 +28,7 @@ const PaymentSuccess = () => {
         <p className="text-gray-600">
           Your Transection Id: <span className="text-black">{trans_id}</span>
         </p><br />
-        <Link to={'/'}><button className="bg-black rounded-md text-white px-5 py-2">Home</button></Link>
+        <Link to={'https://focus-haven-1.onrender.com'}><button className="bg-black rounded-md text-white px-5 py-2">Home</button></Link>
       </div>
     </div>
   );
